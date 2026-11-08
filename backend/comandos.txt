@@ -1,0 +1,18 @@
+PASSO A PASSO PARA RODAR O PROJETO (dentro da pasta backend)
+
+1) npm install
+2) No pgAdmin, crie um banco chamado:  bdProfessores
+3) Abra o arquivo .env e troque SUA_SENHA pela senha do seu PostgreSQL
+4) npx prisma migrate dev        (quando pedir o nome da migration: create-tables)
+5) npx prisma generate
+6) npm run dev
+
+Teste no Postman:
+POST http://localhost:3333/professores
+Body (JSON):
+{
+  "nome": "Maria Souza",
+  "email": "maria@fatec.sp.gov.br",
+  "disciplina": "Banco de Dados",
+  "telefone": "14999998888"
+}

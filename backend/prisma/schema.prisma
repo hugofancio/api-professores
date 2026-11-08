@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Professor {
+  id         String   @id @default(uuid())
+  nome       String
+  email      String   @unique
+  disciplina String
+  telefone   String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@map("professores")
+}
